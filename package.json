@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js --exec babel-node"
+    "dev": "nodemon src/index.js --exec babel-node",
+    "start": "ncp src/graphql/schemas dist/graphql/schemas "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "graphql-yoga": "^1.18.3",
-    "mongoose": "^5.13.5"
+    "mongoose": "^5.13.5",
+    "ncp": "^2.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
