@@ -18,7 +18,6 @@ type Mutation {
 }
 
 type Query {
-  ping: String
   films: [Film!]
   ship: [Ship!]
 }
