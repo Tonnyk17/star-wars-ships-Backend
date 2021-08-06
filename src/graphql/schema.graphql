@@ -1,23 +1,53 @@
 type Mutation {
-  createFilm(title: String!): Film
+  createShip(
+    id: String!
+    image: String
+    name: String
+    model: String
+    starshipClass: String
+    manufacturers: [String]
+    costInCredits: String
+    length: Float
+    crew: String
+    passengers: String
+    maxAtmospheringSpeed: Int
+    movies: [String]
+  ): Ship
+
+  removeShip(id: String!): Ship
 }
 
 type Query {
   ping: String
   films: [Film!]
+  ship: [Ship!]
 }
 
 type Film {
   _id: ID!
-  title: String!
+  EpisodeID: String!
+  src: String!
+  ships: [ShipImage!]
+}
+
+type ShipImage {
+  id: String!
+  name: String
+  url: String!
 }
 
 type Ship {
-  _id: ID!
+  _id: ID
+  id: String!
+  image: String
   name: String
   model: String
   starshipClass: String
   manufacturers: [String]
-  costInCredits: Float
+  costInCredits: String
   length: Float
+  crew: String
+  passengers: String
+  maxAtmospheringSpeed: Int
+  movies: [String]
 }

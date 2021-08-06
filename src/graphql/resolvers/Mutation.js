@@ -1,11 +1,14 @@
-import Message from '../../models/Images';
+import Ships from '../../models/Ships';
 
 const Mutation = {
 
-    createFilm : async(_, {title}) => {
-        const newMessage = new Message({title})
-        console.log(newMessage);
-        await newMessage.save();
+    createShip: async(_, {id,image,name,model,starshipClass,manufacturers,costInCredits,length,crew,passengers,maxAtmospheringSpeed,movies}) => {
+        const newShips = new Ships({id,image,name,model,starshipClass,manufacturers,costInCredits,length,crew,passengers,maxAtmospheringSpeed,movies})
+        console.log(newShips);
+        await newShips.save();
+    },
+    removeShip: async(_,{id}) => {
+        await Ships.findOneAndDelete({id})
     }
 
 };
